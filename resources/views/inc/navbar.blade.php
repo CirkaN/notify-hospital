@@ -36,7 +36,7 @@
                     <a class="nav-link" href="{{ route('login') }}">Login</a>
                 </li>
                 @endguest
-                    
+
 
                 @endif
                 @if(Auth::guard('admin')->check())
@@ -46,7 +46,7 @@
                         </a>
 
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="adminDropdown">
-                            <a href="" class="dropdown-item">Dashboard</a>
+                        <a href="{{route("admin.dashboard.index")}}" class="dropdown-item">Dashboard</a>
                             <a class="dropdown-item" href="#"
                                 onclick="event.preventDefault();
                                                 document.querySelector('#admin-logout-form').submit();">
@@ -62,4 +62,4 @@
             </ul>
         </div>
     </div>
-</nav>  
+</nav>

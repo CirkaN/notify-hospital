@@ -1,4 +1,4 @@
-<form action="{{route('speciality.store')}}" method="POST">
+<form action="{{route('admin.speciality.store')}}" method="POST">
     @csrf
     <input type="text" class="form-control" name="name" placeholder="Speciality name">
     <br>

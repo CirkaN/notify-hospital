@@ -23,7 +23,7 @@ class DoctorController extends Controller
      */
     public function index()
     {
-        //
+        return redirect('/admin/dashboard');
     }
 
     /**
@@ -44,7 +44,7 @@ class DoctorController extends Controller
      */
     public function store(DoctorStoreRequest $request)
     {
-        
+
         $token = Str::random(32);
         $doctor = new Doctor;
         $doctor->name = $request->name;

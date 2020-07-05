@@ -43,12 +43,12 @@ class SpecialityController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(SpecialityStoreRequest $request)
-    {   
-        $newSpeciality = Role::create(['name' => $request->name]);
+    {
+        $newSpeciality = Role::create(['name' => $request->name,'guard_name'=>'web']);
         return back();
 
     }
-    
+
 
     /**
      * Display the specified resource.
@@ -92,7 +92,7 @@ class SpecialityController extends Controller
      */
     public function destroy($id)
     {
-        
+
         $speciality = Role::find($id);
         $speciality->delete();
         return back();

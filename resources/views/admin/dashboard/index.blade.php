@@ -10,7 +10,7 @@
             @forelse ($hospitals as $hospital)
          <a href="/admin/dashboard/manage/{{$hospital->uuid}}"><h3>{{$hospital->name}}</h3></a>
         <form method="POST" action="{{route("admin.hospital.destroy",$hospital->id)}}">
-        @csrf 
+        @csrf
         @method('DELETE')
             <button class="btn btn-danger">Delete this hospital</button>
     </form>
@@ -18,7 +18,11 @@
         Seems like you don't have any hospital, please <a href="{{route("admin.hospital.index")}}">create one</a>.
 
         @endforelse</div>
-        <div class="col-4"></div>
+        <div class="col-4">
+        <form action="{{route("admin.speciality.index")}}">
+            <button class="btn btn-primary">Specialities</button>
+        </form>
+        </div>
     </div>
 </div>
 @else

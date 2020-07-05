@@ -13,15 +13,15 @@
                 @if ($speciality->name == "Super Admin")
                        @else
                        <h5>{{$speciality->name}}</h5>
-                       <form method="POST" action="{{route("speciality.destroy",$speciality->id)}}">
+                       <form method="POST" action="{{route("admin.speciality.destroy",$speciality->id)}}">
                            @csrf
                            @method('DELETE')
                        <button class="btn btn-danger">Delete {{$speciality->name}}</button>
                        </form>
                        <hr>
                 @endif
-     
-            
+
+
             @empty
                 We don't have any specialities at the moment
             @endforelse
@@ -34,14 +34,14 @@
               </button>
             </p>
             <div class="collapse" id="addSpeciality">
-              
+
             @include('admin.speciality.includes.add')
-             
+
             </div>
 
         </div>
         <div class="col-4"></div>
     </div>
 </div>
-    
+
 @endsection
