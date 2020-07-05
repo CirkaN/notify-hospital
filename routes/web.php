@@ -22,7 +22,6 @@ Route::post('/create_a_password','FirstLoginController@storePassword')->name('pa
 Route::get('/notifications','NotificationController@index')->name('notifications')->middleware('auth');
 Route::post('/notifications/mark_as_seen/{id}','NotificationController@markAsSeen')->name('notification.seen');
 
-Route::get('/test','TestController@email'); // delete
 
 Route::get("/unauthorized",function(){
     return '401';
